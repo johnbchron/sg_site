@@ -26,6 +26,9 @@ pub fn App() -> impl IntoView {
 #[component]
 pub fn HomePage() -> impl IntoView {
   view! {
-    <p>"Hello, World!"</p>
+    <div class="flex flex-col gap-1 p-4">
+      <p class="text-3xl font-semibold tracking-tight">"This site is under construction."</p>
+      <p class="">"Check back later for more information!"</p>
+    </div>
   }
 }
