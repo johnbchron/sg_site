@@ -4,7 +4,6 @@ use leptos_router::{Route, Router, Routes};
 
 #[component]
 pub fn App() -> impl IntoView {
-  // Provides context that manages stylesheets, titles, meta tags, etc.
   provide_meta_context();
 
   view! {
