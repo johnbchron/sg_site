@@ -1,12 +1,11 @@
 use leptos::*;
 
-use crate::{NavBar, PageWrapper};
+use crate::PageWrapper;
 
 #[component]
 pub fn HomePage() -> impl IntoView {
   view! {
-    <PageWrapper>
-      <NavBar />
+    <PageWrapper fullscreen={true}>
       <MainHero />
     </PageWrapper>
   }
@@ -16,7 +15,7 @@ pub fn HomePage() -> impl IntoView {
 pub fn MainHero() -> impl IntoView {
   view! {
     <div class="flex flex-row h-dvh items-center justify-center">
-      <div class="flex flex-col mt-12 md:mt-0 md:grid md:grid-rows-1 md:grid-cols-2 gap-12 p-8">
+      <div class="flex flex-col md:grid md:grid-rows-1 md:grid-cols-2 gap-12 p-8">
         // title side
         <div class="flex flex-col gap-4 justify-center">
           <p class="text-5xl lg:text-7xl font-[anton] uppercase tracking-wide text-balance">

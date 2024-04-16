@@ -1,3 +1,4 @@
+mod about;
 mod home;
 
 use leptos::*;
@@ -22,7 +23,7 @@ pub fn App() -> impl IntoView {
     <Router>
       <Routes>
         <Route path="/" view=home::HomePage />
-        <Route path="/about" view=BlankPage />
+        <Route path="/about" view=about::AboutPage />
         <Route path="/values" view=BlankPage />
         <Route path="/vision" view=BlankPage />
         <Route path="/projects" view=BlankPage />
@@ -33,9 +34,14 @@ pub fn App() -> impl IntoView {
 }
 
 #[component]
-pub fn PageWrapper(children: Children) -> impl IntoView {
+pub fn PageWrapper(
+  #[prop(default = false)] fullscreen: bool,
+  children: Children,
+) -> impl IntoView {
   view! {
     <div class="mx-auto container min-h-dvh flex flex-col gap-4">
+      <NavBar />
+      { (!fullscreen).then_some(view! { <div class="mt-12" /> }) }
       {children()}
     </div>
   }
@@ -45,8 +51,17 @@ pub fn PageWrapper(children: Children) -> impl IntoView {
 pub fn BlankPage() -> impl IntoView {
   view! {
     <PageWrapper>
-      <NavBar />
+      <div />
     </PageWrapper>
+  }
+}
+
+#[component]
+pub fn Content(children: Children) -> impl IntoView {
+  view! {
+    <div class="prose px-8">
+      {children()}
+    </div>
   }
 }
 
