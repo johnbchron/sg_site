@@ -60,8 +60,10 @@ pub fn AboutPage() -> impl IntoView {
 
 #[component]
 pub fn NavBarLink(title: &'static str, href: &'static str) -> impl IntoView {
+  let route = leptos_router::use_route().path();
+
   view! {
-    <a class="text-sm md:text-base text-black transition hover:text-black/70" href={href}>
+    <a class={format!("text-sm md:text-base text-black {} transition hover:text-black/70", if route == href { "underline" } else { "" })} href={href}>
       {title}
     </a>
   }
