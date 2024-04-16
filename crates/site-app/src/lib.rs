@@ -105,10 +105,10 @@ pub fn NavBar() -> impl IntoView {
 #[component]
 pub fn FunkyButton() -> impl IntoView {
   view! {
-    <a href="/" class="group relative inline-block text-sm text-black">
+    <a href="/donate" class="group relative inline-block text-sm text-black">
       <span class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-black transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
       ></span>
-      <span class="relative block border border-current bg-white px-4 py-2">"Donate"</span>
+      <span class="relative block border border-current bg-white px-4 py-1.5">"Donate"</span>
     </a>
   }
 }
