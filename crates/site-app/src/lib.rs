@@ -20,6 +20,11 @@ pub fn App() -> impl IntoView {
     <Router>
       <Routes>
         <Route path="/" view=HomePage />
+        <Route path="/about" view=AboutPage />
+        <Route path="/values" view=AboutPage />
+        <Route path="/vision" view=AboutPage />
+        <Route path="/projects" view=AboutPage />
+        <Route path="/donate" view=AboutPage />
       </Routes>
     </Router>
   }
@@ -40,7 +45,15 @@ pub fn HomePage() -> impl IntoView {
     <PageWrapper>
       <NavBar />
       <MainHero />
-      <div class="h-dvh" />
+    </PageWrapper>
+  }
+}
+
+#[component]
+pub fn AboutPage() -> impl IntoView {
+  view! {
+    <PageWrapper>
+      <NavBar />
     </PageWrapper>
   }
 }
@@ -73,10 +86,10 @@ pub fn NavBar() -> impl IntoView {
         <a href="/" class="text-3xl font-[anton] font-normal link">"SGF"</a>
         <div>
           <div class="hidden sm:flex flex-row gap-2 items-center">
-            <NavBarLink title="About" href="/" />
-            <NavBarLink title="Values" href="/" />
-            <NavBarLink title="Vision" href="/" />
-            <NavBarLink title="Projects" href="/" />
+            <NavBarLink title="About" href="/about" />
+            <NavBarLink title="Values" href="/values" />
+            <NavBarLink title="Vision" href="/vision" />
+            <NavBarLink title="Projects" href="/projects" />
           </div>
           <EllipsisVertical class="sm:hidden" />
         </div>
